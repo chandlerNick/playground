@@ -1,11 +1,20 @@
 [project]
 name = "playground"
 version = "0.1.0"
-description = "Add your description here"
+description = "Dependencies for the playground notebooks"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "ipykernel>=6.29.5",
     "numpy>=2.5.4",
     "sounddevice>=0.5.6",
-    "torchaudio>=2.11.1",
+    "torch>=2.14.1",
 ]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu126" }
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
